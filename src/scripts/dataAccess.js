@@ -70,20 +70,4 @@ export const fetchCrafters = () => {
     )
 }
 
-// Getter functions to export copies of each array in applicationState
 
-export const getCrafters = () => {
-  return applicationState.crafters.map(crafter => ({...crafter}))
-}
-
-export const getIngredients = () => {
-  return applicationState.ingredients.map(ingredient => ({...ingredient}))
-}
-
-export const getCraftTypes = () => {
-  return applicationState.craftTypes.map(craftType => ({...craftType}))
-}
-
-export const getCraftRequests = () => {
-  return applicationState.craftRequests.map(craftRequest => ({...craftRequest}))
-}
