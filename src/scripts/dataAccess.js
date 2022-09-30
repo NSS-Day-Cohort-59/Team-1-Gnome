@@ -59,3 +59,31 @@ export const setIngredients = (id) => {
   // Step 2: If it does, remove it with delete() method
   // Step 3: If it does not, add it with add() method
 };
+
+export const fetchCrafters = () => {
+  return fetch(`${API}/plumbers`)
+    .then(response => response.json())
+    .then(
+      (data) => {
+        applicationState.crafters = data;
+      }
+    )
+}
+
+// Getter functions to export copies of each array in applicationState
+
+export const getCrafters = () => {
+  return applicationState.crafters.map(crafter => ({...crafter}))
+}
+
+export const getIngredients = () => {
+  return applicationState.ingredients.map(ingredient => ({...ingredient}))
+}
+
+export const getCraftTypes = () => {
+  return applicationState.craftTypes.map(craftType => ({...craftType}))
+}
+
+export const getCraftRequests = () => {
+  return applicationState.craftRequests.map(craftRequest => ({...craftRequest}))
+}
