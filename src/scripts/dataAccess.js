@@ -19,6 +19,16 @@ const applicationState = {
   }
 };
 
+export const fetchIngredients = () => {
+  return fetch(`${API}/ingredients`)
+    .then(response => response.json())
+    .then(
+      (getIngredients) => {
+        applicationState.ingredients = getIngredients
+      }
+    )
+}
+
 /* 
   Once a new craft completion has been saved in the API,
   add all of the ingredients chosen by the user. 
