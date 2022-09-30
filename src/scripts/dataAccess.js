@@ -59,3 +59,15 @@ export const setIngredients = (id) => {
   // Step 2: If it does, remove it with delete() method
   // Step 3: If it does not, add it with add() method
 };
+
+export const fetchCrafters = () => {
+  return fetch(`${API}/crafters`)
+    .then(response => response.json())
+    .then(
+      (data) => {
+        applicationState.crafters = data;
+      }
+    )
+}
+
+
