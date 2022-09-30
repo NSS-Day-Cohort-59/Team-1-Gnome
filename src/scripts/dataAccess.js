@@ -61,7 +61,7 @@ export const setIngredients = (id) => {
 };
 
 export const fetchCrafters = () => {
-  return fetch(`${API}/plumbers`)
+  return fetch(`${API}/crafters`)
     .then(response => response.json())
     .then(
       (data) => {
